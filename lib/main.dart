@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_packages_app/test_packages/animated_radial_menu/animate_radial_menu.dart';
-import 'package:test_packages_app/test_packages/confetti/confetti.dart';
 import 'package:get/get.dart';
 import 'package:test_packages_app/test_packages/confetti/confetti_controller.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu.dart';

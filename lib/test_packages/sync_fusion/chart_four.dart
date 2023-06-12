@@ -21,13 +21,6 @@ class ChartFourPage extends StatelessWidget {
         children: [
           Expanded(
             child: SfCartesianChart(
-              primaryXAxis: DateTimeAxis(),
-              series: <ChartSeries>[
-                LineSeries(
-                    dataSource: getChartData(),
-                    xValueMapper: (Data data,_) => data.x,
-                    yValueMapper: yValueMapper)
-              ],
             ),
           ),
           Row(

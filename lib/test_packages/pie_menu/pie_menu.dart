@@ -17,6 +17,10 @@ class _PieMenuPageState extends State<PieMenuPage> {
   @override
   Widget build(BuildContext context) {
     return PieCanvas(
+      theme: const PieTheme(
+          delayDuration: Duration.zero,
+          buttonSize: 50,
+          pointerSize: 1),
       onMenuToggle: (isActivee) {
         setState(() {
           isActive = !isActivee;
@@ -45,10 +49,11 @@ class _PieMenuPageState extends State<PieMenuPage> {
             PieAction(
               tooltip: "Heart",
               onSelect: () => showAlertDialog(context, "Heart button tapped!"),
-              child: IconView(icon: Icons.heart_broken, color: Colors.black,),
+              child: IconView(icon: Icons.heart_broken),
             ),
           ],
-          child: Center(
+          child: Align(
+            alignment: Alignment.center,
             child: Container(
               height: 50,
               width: 50,
