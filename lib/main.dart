@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_packages_app/home_page.dart';
 import 'package:test_packages_app/test_packages/confetti/confetti_controller.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu_controller.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Inter', fontFamilyFallback: const ['Pyidaungsu'],
         useMaterial3: true,
       ),
-      home: const SyncFusionPage(),
+      home: const HomePage(),
     );
   }
 }
