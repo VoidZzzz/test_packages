@@ -8,6 +8,8 @@ import 'package:test_packages_app/widgets/custom_elevated_btn.dart';
 import 'package:test_packages_app/widgets/text_view.dart';
 import 'package:get/get.dart';
 
+import 'custom_btm_navi_bar/custom_btm_navi_bar.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -68,6 +70,14 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Get.to(
                   () => const SyncFusionPage(),
+                );
+              },
+            ),
+            CustomElevatedButton(
+              text: "Custom Btm Navi",
+              onTap: () {
+                Get.to(
+                  () => const CustomBottomNaviPage(),
                 );
               },
             ),
