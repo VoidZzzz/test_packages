@@ -43,7 +43,7 @@ class Confetti extends StatelessWidget {
             confettiController: controller.confettiController,
             gravity: 0.01,
             emissionFrequency: 0.2,
-            colors: const [Colors.deepPurple, Colors.amber],
+            colors: const [Colors.deepPurple, Colors.amberAccent, Colors.red, Colors.deepOrange],
             blastDirection: pi / 2,
           )
         ],
