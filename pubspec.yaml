@@ -39,6 +39,7 @@ dependencies:
   number_date_picker: ^0.0.2
   animated_radial_menu: ^0.0.1
   syncfusion_flutter_charts: ^21.2.9
+  flutter_animate:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,7 +69,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/images/
+    - assets/fonts/
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

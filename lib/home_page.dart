@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_packages_app/test_packages/animated_radial_menu/animate_radial_menu.dart';
 import 'package:test_packages_app/test_packages/confetti/confetti.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation/loading_animation.dart';
 import 'package:test_packages_app/test_packages/num_date_picker/num_date_picker.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu.dart';
 import 'package:test_packages_app/test_packages/sync_fusion/sync_fusion_page.dart';
@@ -24,65 +25,80 @@ class HomePage extends StatelessWidget {
           fontSize: 20,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisExtent: 40,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 20,
-              crossAxisCount: 2),
-          children: [
-            CustomElevatedButton(
-              text: "Confetti",
-              onTap: () {
-                Get.to(
-                  () => const Confetti(),
-                );
-              },
+      body: Column(
+        children: [
+          // TextView(text: "${int.parse("source")}"),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: GridView(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisExtent: 40,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 20,
+                    crossAxisCount: 2),
+                children: [
+                  CustomElevatedButton(
+                    text: "Confetti",
+                    onTap: () {
+                      Get.to(
+                        () => const Confetti(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "NumDatePicker",
+                    onTap: () {
+                      Get.to(
+                        () => const NumDatePicker(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Animated Radial Menu",
+                    onTap: () {
+                      Get.to(
+                        () => const AnimatedRadialMenu(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Pie Menu",
+                    onTap: () {
+                      Get.to(
+                        () => const PieMenuPage(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Charts",
+                    onTap: () {
+                      Get.to(
+                        () => const SyncFusionPage(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Custom Btm Navi",
+                    onTap: () {
+                      Get.to(
+                        () => const CustomBottomNaviPage(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Custom Animation",
+                    onTap: () {
+                      Get.to(
+                        () => LoadingAnimation(),
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
-            CustomElevatedButton(
-              text: "NumDatePicker",
-              onTap: () {
-                Get.to(
-                  () => const NumDatePicker(),
-                );
-              },
-            ),
-            CustomElevatedButton(
-              text: "Animated Radial Menu",
-              onTap: () {
-                Get.to(
-                  () => const AnimatedRadialMenu(),
-                );
-              },
-            ),
-            CustomElevatedButton(
-              text: "Pie Menu",
-              onTap: () {
-                Get.to(
-                  () => const PieMenuPage(),
-                );
-              },
-            ),
-            CustomElevatedButton(
-              text: "Charts",
-              onTap: () {
-                Get.to(
-                  () => const SyncFusionPage(),
-                );
-              },
-            ),
-            CustomElevatedButton(
-              text: "Custom Btm Navi",
-              onTap: () {
-                Get.to(
-                  () => const CustomBottomNaviPage(),
-                );
-              },
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
