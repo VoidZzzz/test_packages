@@ -10,13 +10,14 @@ class LoadingAnimationController extends GetxController
   late AnimationController leftArcAnimationController;
   late Animation<double> leftArcAnimation;
 
-  int kAnimateTime = 1000;
+  int kAnimateTime = 300;
+  int kAnimateTimeTwo = 800;
 
   @override
   void onInit() {
     super.onInit();
     loadingAnimationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: kAnimateTime));
+        vsync: this, duration: Duration(milliseconds: kAnimateTimeTwo));
 
     leftArcAnimationController = AnimationController(
         vsync: this, duration: Duration(milliseconds: kAnimateTime));
@@ -25,10 +26,9 @@ class LoadingAnimationController extends GetxController
         Tween<double>(begin: 0, end: 1).animate(leftArcAnimationController)
           ..addStatusListener((status) async {
             if (status == AnimationStatus.completed) {
-              superPrint("ARC COMPLETE");
               leftArcAnimationController.reset();
-              await Future.delayed(Duration(milliseconds: kAnimateTime));
-              leftArcAnimationController.forward();
+              loadingAnimationController.reset();
+              loadingAnimationController.forward();
             }
           });
 
@@ -36,41 +36,16 @@ class LoadingAnimationController extends GetxController
         Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(parent: loadingAnimationController, curve: Curves.easeInBack))
           ..addStatusListener((status) async {
             if (status == AnimationStatus.completed) {
-              await Future.delayed(Duration(milliseconds: kAnimateTime));
-              loadingAnimationController.reset();
-              loadingAnimationController.forward();
+              leftArcAnimationController.forward();
             }
           });
+
     loadingAnimationController.forward();
-    Future.delayed(Duration(milliseconds: kAnimateTime))
-        .then((value) => leftArcAnimationController.forward());
   }
-
-  // void initLoad()async{
-  //   startCircle();
-  //   await Future.delayed(const Duration(seconds: 4)).then((value) => resetCircle());
-  // }
-
-  void resetArc() {
-    leftArcAnimationController.reset();
-  }
-
-  void startArc() {
-    leftArcAnimationController.forward();
-  }
-
-  // void resetCircle(){
-  //   loadingAnimationController.reset();
-  // }
-  //
-  // void startCircle(){
-  //   loadingAnimationController.forward();
-  // }
-
   @override
   void onClose() {
     super.onClose();
     leftArcAnimationController.dispose();
-    // loadingAnimationController.dispose();
+    loadingAnimationController.dispose();
   }
 }

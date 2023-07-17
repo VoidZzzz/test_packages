@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_super_scaffold/flutter_super_scaffold.dart';
 import 'package:get/get.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation/loading_animation_controller.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_four.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_three.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_two/loading_animation_two.dart';
+
+import '../loading_animation_five.dart';
 
 class LoadingAnimation extends StatelessWidget {
   LoadingAnimation({Key? key}) : super(key: key);
@@ -11,63 +16,84 @@ class LoadingAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterSuperScaffold(
+      backgroundColor: Colors.blueGrey,
       isTopSafe: false,
       body: GetBuilder<LoadingAnimationController>(
-        builder: (loadingAnimationController) {
-          return Center(
-            child: Container(
-              color: Colors.transparent,
-              child: Stack(
-                children: [
-                  CustomPaint(
-                    size: const Size(280, 280),
-                    painter: CirclePainter(),
-                  ),
-                  AnimatedBuilder(animation: loadingAnimationController.leftArcAnimation, builder: (context, child){
-                    superPrint(loadingAnimationController.leftArcAnimation.value);
-                    return CustomPaint(
+          builder: (loadingAnimationController) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 15),
+          child: GridView(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                child: Stack(
+                  children: [
+                    CustomPaint(
                       size: const Size(280, 280),
-                      painter: ArcPainter(
-                          startAngle: 0.5 * 3.14,
-                          sweepAngle:
-                          (3.14 * loadingAnimationController.leftArcAnimation.value)),
-                    );
-                  }),
-                  AnimatedBuilder(animation: loadingAnimationController.leftArcAnimation, builder: (context, child){
-                    superPrint(loadingAnimationController.leftArcAnimation.value);
-                    return CustomPaint(
-                      size: const Size(280, 280),
-                      painter: ArcPainter(
-                          startAngle: 0.5 * 3.14,
-                          sweepAngle:
-                          -(3.14 * loadingAnimationController.leftArcAnimation.value)),
-                    );
-                  }),
-                  AnimatedBuilder(animation: loadingAnimationController.loadingAnimationn, builder: (context, child){
-                    return Transform.translate(
-                      offset: Offset(
-                          130,
-                          80 +
-                              53.5 *
-                                  2 *
-                                  loadingAnimationController
-                                      .loadingAnimationn.value),
-                      child: Container(
-                        height: 18,
-                        width: 18,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.pinkAccent,
-                        ),
-                      ),
-                    );
-                  })
-                ],
+                      painter: CirclePainter(),
+                    ),
+                    AnimatedBuilder(
+                        animation: loadingAnimationController.leftArcAnimation,
+                        builder: (context, child) {
+                          superPrint(
+                              loadingAnimationController.leftArcAnimation.value);
+                          return CustomPaint(
+                            size: const Size(280, 280),
+                            painter: ArcPainter(
+                                startAngle: 0.5 * 3.14,
+                                sweepAngle: (3.14 *
+                                    loadingAnimationController
+                                        .leftArcAnimation.value)),
+                          );
+                        }),
+                    AnimatedBuilder(
+                        animation: loadingAnimationController.leftArcAnimation,
+                        builder: (context, child) {
+                          superPrint(
+                              loadingAnimationController.leftArcAnimation.value);
+                          return CustomPaint(
+                            size: const Size(280, 280),
+                            painter: ArcPainter(
+                                startAngle: 0.5 * 3.14,
+                                sweepAngle: -(3.14 *
+                                    loadingAnimationController
+                                        .leftArcAnimation.value)),
+                          );
+                        }),
+                    AnimatedBuilder(
+                        animation: loadingAnimationController.loadingAnimationn,
+                        builder: (context, child) {
+                          return Transform.translate(
+                            offset: Offset(
+                                79,
+                                45.5 +
+                                    67.5 *
+                                        loadingAnimationController
+                                            .loadingAnimationn.value),
+                            child: Container(
+                              height: 13,
+                              width: 13,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.pinkAccent,
+                              ),
+                            ),
+                          );
+                        })
+                  ],
+                ),
               ),
-            ),
-          );
-        }
-      ),
+              LoadingAnimationTwo(),
+              LoadingAnimationThree(),
+              LoadingAnimationFour(),
+              LoadingAnimationFive(),
+            ],
+          ),
+        );
+      }),
     );
   }
 }
@@ -78,7 +104,7 @@ class CirclePainter extends CustomPainter {
     Paint circlePaint = Paint()
       ..color = Colors.grey.withOpacity(0.8)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 18;
+      ..strokeWidth = 13;
 
     double radius = size.width / 5;
     Offset center = Offset(size.width / 2, size.height / 2);
@@ -104,7 +130,7 @@ class ArcPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..color = Colors.pinkAccent
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 18;
+      ..strokeWidth = 13;
 
     double radius = size.width / 5;
     Offset center = Offset(size.width / 2, size.height / 2);

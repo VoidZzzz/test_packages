@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:test_packages_app/test_packages/custom_animation/custom_animation_controller.dart';
 import 'package:test_packages_app/widgets/text_view.dart';
 import 'package:get/get.dart';
 
@@ -25,18 +26,22 @@ class Confetti extends StatelessWidget {
                 fontWeight: FontWeight.w800,
               ),
             ),
-            body: Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurple.shade300),
-                onPressed: () {
-                  controller.onTap();
-                },
-                child: TextView(
-                  text: !controller.isPlaying ? "Stop" : "Party Time",
-                  fontSize: 13,
-                ),
-              ),
+            body: GetBuilder<CustomAnimationController>(
+              builder: (context) {
+                return Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple.shade300),
+                    onPressed: () {
+                      controller.onTap();
+                    },
+                    child: TextView(
+                      text: !controller.isPlaying ? "Stop" : "Party Time",
+                      fontSize: 13,
+                    ),
+                  ),
+                );
+              }
             ),
           ),
           ConfettiWidget(
