@@ -157,7 +157,7 @@ class _LoadingAnimationTwoState extends State<LoadingAnimationTwo>
                       child: TextView(
                     text: "Loading..",
                     color: Colors.black,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w900,
                   )))
             ],
           );

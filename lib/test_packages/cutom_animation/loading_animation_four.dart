@@ -29,7 +29,8 @@ class _LoadingAnimationFourState extends State<LoadingAnimationFour>
     controllerThree = AnimationController(
         vsync: this, duration: Duration(milliseconds: duration));
 
-    animation = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(parent: controller, curve: Curves.easeInToLinear))
+    animation = Tween<double>(begin: 0, end: 1).animate(
+        CurvedAnimation(parent: controller, curve: Curves.easeInToLinear))
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           controller.reset();
@@ -76,7 +77,6 @@ class _LoadingAnimationFourState extends State<LoadingAnimationFour>
           AnimatedBuilder(
               animation: animationTwo,
               builder: (context, child) {
-                superPrint(animationTwo.value);
                 return CustomPaint(
                   painter: CustomCirclePainter(
                       height: 200,
@@ -107,15 +107,20 @@ class CustomCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint circlePainter = Paint()
       ..strokeWidth = strokeWidth
-      ..color = Colors.pinkAccent
+      ..color = Colors.amber
+      ..shader = SweepGradient(
+              colors: [Colors.amber, Colors.redAccent, Colors.yellowAccent],
+              startAngle: 0,
+              endAngle: 1.2)
+          .createShader(Offset.zero & size)
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
     Rect rect = Rect.fromCircle(
-        center: Offset(size.width / 2 , size.height / 2),
+        center: Offset(size.width / 2, size.height / 2),
         radius: size.width / 3);
 
-    canvas.drawCircle(Offset((width * 0.5)-16.5, (height * 0.5)-16.5), this.circleSize * 0.3,
-        circlePainter);
+    canvas.drawCircle(Offset((width * 0.5) - 16.5, (height * 0.5) - 16.5),
+        this.circleSize * 0.3, circlePainter);
   }
 
   @override

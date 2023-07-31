@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_super_scaffold/flutter_super_scaffold.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:test_packages_app/custom_btm_navi_bar/custom_navi_controller.dart';
 import 'package:test_packages_app/home_page.dart';
 import 'package:test_packages_app/test_packages/confetti/confetti_controller.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu_controller.dart';
+import 'package:test_packages_app/test_packages/test/test_page.dart';
+import 'package:test_packages_app/utils/extensions.dart';
 import 'package:test_packages_app/widgets/text_view.dart';
 
 void main() async {
@@ -35,9 +38,10 @@ class CustomErrorWidget extends StatelessWidget {
         height: Get.height,
         child: Stack(
           children: [
-            InkWell(onTap: (){
-              Get.to(() => const HomePage());
-            },
+            InkWell(
+              onTap: () {
+                Get.to(() => const HomePage());
+              },
               child: Positioned.fill(
                 child: (oneTwoThree == 1)
                     ? Image.asset(
@@ -88,5 +92,75 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomePage(),
     );
+  }
+}
+
+class HiHIHi extends StatelessWidget {
+  const HiHIHi({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlutterSuperScaffold(
+        body: Column(
+      children: [
+        Container(
+          color: Colors.green.withOpacity(0.1),
+          child: Row(
+            children: [
+              Container(
+                height: 50,
+                width: 50,
+                color: Colors.redAccent,
+              ),
+              10.widthBox(),
+              Column(
+                children: [
+                  TextView(text: "Header"),
+                  TextView(
+                    text: "SubTitle",
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
+                ],
+              ),
+              Container(
+                child: Icon(Iconsax.trash),
+              )
+            ],
+          ),
+        ),
+        10.heightBox(),
+        Container(
+          color: Colors.blue.withOpacity(0.1),
+          child: Row(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 50,
+                width: 50,
+                color: Colors.redAccent,
+              ),
+              10.widthBox(),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextView(text: "Header"),
+                  TextView(
+                    text: "SubTitle",
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
+                ],
+              ),
+              Spacer(),
+              Container(height: 50, width: 30,
+                child: Center(child: Icon(Iconsax.trash)),
+              )
+            ],
+          ),
+        ),
+      ],
+    ));
   }
 }

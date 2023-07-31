@@ -3,6 +3,7 @@ import 'package:flutter_super_scaffold/flutter_super_scaffold.dart';
 import 'package:get/get.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation/loading_animation_controller.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_four.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_siz.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_three.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_two/loading_animation_two.dart';
 
@@ -28,7 +29,8 @@ class LoadingAnimation extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
                 child: Stack(
                   children: [
                     CustomPaint(
@@ -38,8 +40,6 @@ class LoadingAnimation extends StatelessWidget {
                     AnimatedBuilder(
                         animation: loadingAnimationController.leftArcAnimation,
                         builder: (context, child) {
-                          superPrint(
-                              loadingAnimationController.leftArcAnimation.value);
                           return CustomPaint(
                             size: const Size(280, 280),
                             painter: ArcPainter(
@@ -52,8 +52,6 @@ class LoadingAnimation extends StatelessWidget {
                     AnimatedBuilder(
                         animation: loadingAnimationController.leftArcAnimation,
                         builder: (context, child) {
-                          superPrint(
-                              loadingAnimationController.leftArcAnimation.value);
                           return CustomPaint(
                             size: const Size(280, 280),
                             painter: ArcPainter(
@@ -68,9 +66,9 @@ class LoadingAnimation extends StatelessWidget {
                         builder: (context, child) {
                           return Transform.translate(
                             offset: Offset(
-                                79,
-                                45.5 +
-                                    67.5 *
+                                75,
+                                46 +
+                                    60.5 *
                                         loadingAnimationController
                                             .loadingAnimationn.value),
                             child: Container(
@@ -90,6 +88,7 @@ class LoadingAnimation extends StatelessWidget {
               LoadingAnimationThree(),
               LoadingAnimationFour(),
               LoadingAnimationFive(),
+              LoadingAnimationSiz()
             ],
           ),
         );
@@ -129,6 +128,9 @@ class ArcPainter extends CustomPainter {
     Paint arcPainter = Paint()
       ..strokeCap = StrokeCap.round
       ..color = Colors.pinkAccent
+      // ..shader = SweepGradient(
+      //         colors: [Colors.greenAccent, Colors.redAccent], startAngle: 2)
+      //     .createShader(Offset.zero & size)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 13;
 

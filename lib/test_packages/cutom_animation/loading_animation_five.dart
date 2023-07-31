@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_packages_app/widgets/text_view.dart';
 
 class LoadingAnimationFive extends StatefulWidget {
   const LoadingAnimationFive({Key? key}) : super(key: key);
@@ -30,10 +31,11 @@ class _LoadingAnimationFiveState extends State<LoadingAnimationFive>
     controller.repeat();
     super.initState();
   }
+
   @override
   void dispose() {
     controller.dispose();
-    animation.removeStatusListener((status) { });
+    animation.removeStatusListener((status) {});
     super.dispose();
   }
 
@@ -71,11 +73,18 @@ class _LoadingAnimationFiveState extends State<LoadingAnimationFive>
                     ),
                   ),
                   Container(
-                    height: 160,
-                    width: 160,
+                    height: 150,
+                    width: 150,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Colors.white),
+                    child: const Center(
+                      child: TextView(
+                        text: "UwU",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
                   ),
                 ],
               ),
