@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:test_packages_app/test_packages/animated_radial_menu/animate_radial_menu.dart';
 import 'package:test_packages_app/test_packages/confetti/confetti.dart';
-import 'package:test_packages_app/test_packages/cutom_animation/loading_animation/loading_animation.dart';
+import 'package:test_packages_app/test_packages/lottie/lottie_animation.dart';
 import 'package:test_packages_app/test_packages/num_date_picker/num_date_picker.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu.dart';
+import 'package:test_packages_app/test_packages/staggered_animation/staggered_home_page.dart';
 import 'package:test_packages_app/test_packages/sync_fusion/sync_fusion_page.dart';
 import 'package:test_packages_app/widgets/custom_elevated_btn.dart';
 import 'package:test_packages_app/widgets/text_view.dart';
-import 'package:get/get.dart';
 
 import 'custom_btm_navi_bar/custom_btm_navi_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -88,10 +88,18 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   CustomElevatedButton(
+                    text: "Lottie Animation",
+                    onTap: () {
+                      Get.to(
+                        () => const LottieAnimation(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
                     text: "Custom Animation",
                     onTap: () {
                       Get.to(
-                        () => LoadingAnimation(),
+                        () => StaggeredHomePage(),
                       );
                     },
                   ),

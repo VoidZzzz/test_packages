@@ -1,8 +1,6 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:test_packages_app/widgets/text_view.dart';
 
 class LoadingAnimationFive extends StatefulWidget {
@@ -60,16 +58,17 @@ class _LoadingAnimationFiveState extends State<LoadingAnimationFive>
                       borderRadius: BorderRadius.circular(5),
                       color: Colors.black,
                       gradient: LinearGradient(
-                          begin: Alignment(cos(2 * pi * animation.value),
-                              sin(2 * pi * animation.value)),
-                          end: Alignment(cos(2 * pi * (animation.value + 0.5)),
-                              sin(2 * pi * (animation.value + 0.5))),
-                          colors: const [
-                            Colors.green,
-                            Colors.amber,
-                            Colors.redAccent,
-                            Colors.blue,
-                          ]),
+                        begin: Alignment(cos(2 * pi * animation.value),
+                            sin(2 * pi * animation.value)),
+                        end: Alignment(cos(2 * pi * (animation.value + 0.5)),
+                            sin(2 * pi * (animation.value + 0.5))),
+                        colors: const [
+                          Colors.green,
+                          Colors.amber,
+                          Colors.redAccent,
+                          Colors.blue,
+                        ],
+                      ),
                     ),
                   ),
                   Container(

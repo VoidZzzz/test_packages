@@ -6,6 +6,7 @@ import 'package:test_packages_app/test_packages/cutom_animation/loading_animatio
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_siz.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_three.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_two/loading_animation_two.dart';
+import 'package:test_packages_app/test_packages/staggered_animation/stg_animation.dart';
 
 import '../loading_animation_five.dart';
 
@@ -88,7 +89,8 @@ class LoadingAnimation extends StatelessWidget {
               LoadingAnimationThree(),
               LoadingAnimationFour(),
               LoadingAnimationFive(),
-              LoadingAnimationSiz()
+              // LoadingAnimationSiz(),
+              StgAnimation()
             ],
           ),
         );
