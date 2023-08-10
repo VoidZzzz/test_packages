@@ -17,7 +17,7 @@ class LottieAnimation extends StatelessWidget {
             Transform.flip(
                 flipX: true,
                 child:
-                    Lottie.asset("assets/json/car2.json", width: Get.width)),
+                    Lottie.asset("assets/json/car3.json", width: Get.width)),
             // Transform.flip(
             //     flipX: false,
             //     child:
