@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_packages_app/test_packages/animated_radial_menu/animate_radial_menu.dart';
 import 'package:test_packages_app/test_packages/confetti/confetti.dart';
+import 'package:test_packages_app/test_packages/custom_animation/custom_animation.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation/loading_animation.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_seven.dart';
 import 'package:test_packages_app/test_packages/lottie/lottie_animation.dart';
 import 'package:test_packages_app/test_packages/num_date_picker/num_date_picker.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu.dart';
+import 'package:test_packages_app/test_packages/rive/rive.dart';
 import 'package:test_packages_app/test_packages/staggered_animation/staggered_home_page.dart';
 import 'package:test_packages_app/test_packages/sync_fusion/sync_fusion_page.dart';
 import 'package:test_packages_app/widgets/custom_elevated_btn.dart';
@@ -96,10 +100,34 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   CustomElevatedButton(
-                    text: "Custom Animation",
+                    text: "Staggered Animation",
                     onTap: () {
                       Get.to(
                         () => StaggeredHomePage(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Loading Animation",
+                    onTap: () {
+                      Get.to(
+                        () => LoadingAnimation(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Loading Animation7",
+                    onTap: () {
+                      Get.to(
+                        () => LoadingAnimationSeven(),
+                      );
+                    },
+                  ),
+                  CustomElevatedButton(
+                    text: "Plant a Tree",
+                    onTap: () {
+                      Get.to(
+                        () => Rive(),
                       );
                     },
                   ),

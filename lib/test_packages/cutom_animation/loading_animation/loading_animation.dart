@@ -3,6 +3,7 @@ import 'package:flutter_super_scaffold/flutter_super_scaffold.dart';
 import 'package:get/get.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation/loading_animation_controller.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_four.dart';
+import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_seven.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_siz.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_three.dart';
 import 'package:test_packages_app/test_packages/cutom_animation/loading_animation_two/loading_animation_two.dart';
@@ -89,8 +90,9 @@ class LoadingAnimation extends StatelessWidget {
               LoadingAnimationThree(),
               LoadingAnimationFour(),
               LoadingAnimationFive(),
+              // LoadingAnimationSeven()
               // LoadingAnimationSiz(),
-              StgAnimation()
+              // StgAnimation()
             ],
           ),
         );

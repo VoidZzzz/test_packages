@@ -41,6 +41,7 @@ dependencies:
   syncfusion_flutter_charts:
   flutter_animate:
   lottie:
+  rive:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -74,6 +75,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/json/
+    - assets/rive/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

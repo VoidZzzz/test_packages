@@ -5,6 +5,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:test_packages_app/custom_btm_navi_bar/custom_navi_controller.dart';
 import 'package:test_packages_app/home_page.dart';
 import 'package:test_packages_app/test_packages/confetti/confetti_controller.dart';
+import 'package:test_packages_app/test_packages/custom_animation/custom_animation_controller.dart';
 import 'package:test_packages_app/test_packages/pie_menu/pie_menu_controller.dart';
 import 'package:test_packages_app/test_packages/test/test_page.dart';
 import 'package:test_packages_app/utils/extensions.dart';
@@ -15,6 +16,7 @@ void main() async {
       CustomErrorWidget(errorDetails: detail, oneTwoThree: 3);
   Get.put(TestConfettiController());
   Get.put(PieMenuController());
+  Get.put(CustomAnimationController());
   Get.put(HomeMainController());
   await Future.delayed(const Duration(seconds: 1));
   runApp(const MyApp());
