@@ -5,6 +5,7 @@ import 'package:test_packages_app/test_packages/confetti/confetti.dart';
 class TestConfettiController extends GetxController {
   bool isPlaying = true;
   late ConfettiController confettiController;
+  bool xCongrats = false;
 
   @override
   void onInit() {
